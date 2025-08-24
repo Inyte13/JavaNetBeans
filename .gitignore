@@ -22,3 +22,4 @@ nbdist/
 # === Archivos de sistema ===
 .DS_Store
 Thumbs.db
+/prueba/nbproject/private/
