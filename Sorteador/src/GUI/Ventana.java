@@ -1,16 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
 import java.util.Random;
 import javax.swing.table.DefaultTableModel;
 
-/**
- *
- * @author luisg
- */
 public class Ventana extends javax.swing.JFrame{
     public Ventana() {
         initComponents();
@@ -214,22 +206,22 @@ public class Ventana extends javax.swing.JFrame{
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortearActionPerformed
-        int cantGan=Integer.parseInt(txtCantGanadores.getText());
-        for(int i=1;i<=cantGan;i++){        
-            int mes=cmbMeses.getSelectedIndex()+1;
-            int diaRandom, ticketRandom, numSorteado;
+        int cantGan=Integer.parseInt(txtCantGanadores.getText()); // Convertimos el String del textfield "txtCanGanador                                                                                                         es" a un Int
+        for(int i=1;i<=cantGan;i++){ // Bucle con la cantidad de ganadores 
+            int mes=cmbMeses.getSelectedIndex()+1; // Declaramos "mes" usando combobox de meses+1
+            int diaRandom; // Inicializamos variables
             Random numRandom=new Random();
-            ticketRandom=numRandom.nextInt(9999)+1;
-            if(mes==2){
-                diaRandom=numRandom.nextInt(28)+1;
+            int ticketRandom=numRandom.nextInt(9999)+1; // "ticketRandom" es un número random entre 1-9999
+            if(mes==2){ // Si el mes es febrero (2)
+                diaRandom=numRandom.nextInt(28)+1; // El "diaRandom" será un número random entre 1-28
             }else if(mes==11||mes==6||mes==4||mes==9){
-                diaRandom=numRandom.nextInt(30)+1;            
+                diaRandom=numRandom.nextInt(30)+1; // El "diaRandom" será un número random entre 1-30        
             }else{
-                diaRandom=numRandom.nextInt(31)+1;}
-            numSorteado=(diaRandom*100+mes)*10000+ticketRandom;
-            String numStr=Integer.toString(numSorteado);            
-            if(diaRandom<10){
-                numStr="0"+numStr;}            
+                diaRandom=numRandom.nextInt(31)+1;} // El "diaRandom" será un número random entre 1-31
+            int numSorteado=(diaRandom*100+mes)*10000+ticketRandom; // Formato dia/mes/
+            String numStr=Integer.toString(numSorteado); // "numSorteado" lo convertimos a String
+            if(diaRandom<10){ // Si el dia tiene una cifra
+                numStr="0"+numStr;} // Agregamos "0" al inicio
             DefaultTableModel modelo=(DefaultTableModel) tableGanadores.getModel();
             Object[] objeto={i,numStr};
             modelo.addRow(objeto);
@@ -237,7 +229,8 @@ public class Ventana extends javax.swing.JFrame{
     }//GEN-LAST:event_btnSortearActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        txtCantGanadores.setText("");
+        // Cuando presionemos el btnLimpiar
+        txtCantGanadores.setText(""); // Setteamos "" nada
         DefaultTableModel modelo=(DefaultTableModel) tableGanadores.getModel();
         
     }//GEN-LAST:event_btnLimpiarActionPerformed
