@@ -1,5 +1,6 @@
 package gui;
 public class Principal extends javax.swing.JFrame {
+    //Creamos los vectores globales
     String dni[]=new String[10];
     String nombre[]=new String[10];
     String apellido[]=new String[10];
@@ -236,37 +237,40 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
-        int indice=Integer.parseInt(txtIndice.getText());
-        if(indice>0){
+        // Cuando presionemos el btnAtras
+        int indice=Integer.parseInt(txtIndice.getText()); // Convertimos el String del textField "txtIndice" a int
+        if(indice>0){ 
             indice--;
-            txtDni.setText(dni[indice]);
-            txtNombre.setText(nombre[indice]);
-            txtApellido.setText(apellido[indice]);
-            txtDireccion.setText(direccion[indice]);
-            txtTelefono.setText(telefono[indice]);
-            txtNacimiento.setText(nacimiento[indice]);
+            txtDni.setText(dni[indice]); // Setteamos el valor actualizado del vector dni
+            txtNombre.setText(nombre[indice]); // Setteamos el valor actualizado del vector nombre
+            txtApellido.setText(apellido[indice]); // Setteamos el valor actualizado del vector apellido
+            txtDireccion.setText(direccion[indice]); // Setteamos el valor actualizado del vector direccion
+            txtTelefono.setText(telefono[indice]); // Setteamos el valor actualizado del vector telefono
+            txtNacimiento.setText(nacimiento[indice]); // Setteamos el valor actualizado del vector nacimiento
         }
-        txtIndice.setText(String.valueOf(indice));
+        txtIndice.setText(String.valueOf(indice)); // Setteamos el nuevo valor del indice
     }//GEN-LAST:event_btnAtrasActionPerformed
 
     private void btnAdelanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdelanteActionPerformed
-        int indice=Integer.parseInt(txtIndice.getText());
+        // Cuando presionemos el btnAdelante
+        int indice=Integer.parseInt(txtIndice.getText()); // Convertimos el String del textField "txtIndice" a int
         if(indice<9){
             indice++;
-            txtDni.setText(dni[indice]);
-            txtNombre.setText(nombre[indice]);
-            txtApellido.setText(apellido[indice]);
-            txtDireccion.setText(direccion[indice]);
-            txtTelefono.setText(telefono[indice]);
-            txtNacimiento.setText(nacimiento[indice]);
+            txtDni.setText(dni[indice]); // Setteamos el valor actualizado del vector dni
+            txtNombre.setText(nombre[indice]); // Setteamos el valor actualizado del vector nombre
+            txtApellido.setText(apellido[indice]); // Setteamos el valor actualizado del vector apellido
+            txtDireccion.setText(direccion[indice]); // Setteamos el valor actualizado del vector direccion
+            txtTelefono.setText(telefono[indice]); // Setteamos el valor actualizado del vector telefono
+            txtNacimiento.setText(nacimiento[indice]); // Setteamos el valor actualizado del vector nacimiento
         }
-        txtIndice.setText(String.valueOf(indice));
+        txtIndice.setText(String.valueOf(indice)); // Setteamos el nuevo valor del indice
     }//GEN-LAST:event_btnAdelanteActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        int indice=Integer.parseInt(txtIndice.getText());
-        dni[indice]=txtDni.getText();
-        nombre[indice]=txtNombre.getText();
+        // Cuando presionemos el btnGuardad
+        int indice=Integer.parseInt(txtIndice.getText()); // Convertimos el String del textField "txtIndice" a int
+        dni[indice]=txtDni.getText(); // Getteamos el valor acual del textField "txtDni" y lo guardamos en el vector
+        nombre[indice]=txtNombre.getText(); 
         apellido[indice]=txtApellido.getText();
         direccion[indice]=txtDireccion.getText();
         telefono[indice]=txtTelefono.getText();
