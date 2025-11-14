@@ -4,7 +4,7 @@ import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-public class EjemploRadioButton {
+public class Ejemplo {
 public static void main(String[] args) {
   JFrame ventana = new JFrame("Ejemplo JRadioButton");
   ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
